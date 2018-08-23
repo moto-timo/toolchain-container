@@ -42,7 +42,7 @@ RUN userdel -r yoctouser && \
         /usr/bin/restrict_groupadd.sh \
         /usr/bin/restrict_useradd.sh
 
-USER usersetup
+#USER usersetup
 ENV LANG=en_US.UTF-8
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/usr/bin/toolchain-entry.py"]

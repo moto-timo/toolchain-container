@@ -20,12 +20,11 @@ FROM crops/yocto:ubuntu-16.04-base
 
 USER root
 
-COPY usersetup.py \
-         toolchain-launch.py \
-         toolchain-entry.py \
-         restrict_groupadd.sh \
-         restrict_useradd.sh \
-     /usr/bin/
+ADD https://raw.githubusercontent.com/crops/extsdk-container/master/usersetup.py \
+         https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_groupadd.sh \
+         https://raw.githubusercontent.com/crops/extsdk-container/master/restrict_useradd.sh \
+         /usr/bin/
+COPY toolchain-launch.py toolchain-entry.py /usr/bin/
 COPY sudoers.usersetup /etc/
 
 # We remove the user because we add a new one of our own.

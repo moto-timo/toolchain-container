@@ -150,7 +150,7 @@ try:
         urlarg = ""
 
     cmd = """usersetup.py --username=sdkuser --workdir={workdir} {idargs} toolchain-launch.py """\
-          """--workdir={workdir} --toolchain={toolchain} {cmdarg}"""
+          """--workdir={workdir} --toolchain={toolchain} -- {cmdarg}"""
     cmd = cmd.format(workdir=args.workdir, idargs=idargs, toolchain=args.toolchain, cmdarg=args.cmd).split()
     os.execvp(cmd[0], cmd)
 

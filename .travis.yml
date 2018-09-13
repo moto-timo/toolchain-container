@@ -13,6 +13,6 @@ before_install:
 - pip install pytest
 script:
 - docker build -t ${REPO} .
-#- pytest --testimage=${REPO}
+- pytest --testimage=${REPO}
 after_success:
 - bash deploy.sh
